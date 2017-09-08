@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="660.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Controllers.Controller">
+  <children>
+    <TabPane blendMode="SRC_OVER" cache="false" prefHeight="595.0" prefWidth="726.0" rotateGraphic="false" side="TOP" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <tabs>
+        <Tab fx:id="recordsTab" text="Records">
+          <content>
+            <AnchorPane id="Content" fx:id="recordsAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="501.0" prefWidth="697.0" />
+          </content>
+        </Tab>
+        <Tab fx:id="customersTab" text="Customers">
+          <content>
+            <AnchorPane id="Content" fx:id="customersAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          </content>
+        </Tab>
+        <Tab fx:id="ShopsTab" text="Shops">
+          <content>
+            <AnchorPane id="Content" fx:id="shopsAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          </content>
+        </Tab>
+        <Tab fx:id="CardsTab" text="Cards">
+          <content>
+            <AnchorPane id="Content" fx:id="cardsAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          </content>
+        </Tab>
+        <Tab fx:id="EmployeesTab" text="Employees">
+          <content>
+            <AnchorPane id="Content" fx:id="employeesAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          </content>
+        </Tab>
+        <Tab fx:id="CardholdersTab" text="Cardholders">
+          <content>
+            <AnchorPane id="Content" fx:id="cardholdersAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          </content>
+        </Tab>
+        <Tab fx:id="StorageTab" text="Storage">
+          <content>
+            <AnchorPane id="Content" fx:id="storageAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          </content>
+        </Tab>
+        <Tab fx:id="PurchaseTab" text="Purchases">
+          <content>
+            <AnchorPane id="Content" fx:id="purchaseAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</AnchorPane>

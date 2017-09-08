@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane fx:controller="View.Controllers.StorageController" id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <TableView fx:id="storageTable" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <columns>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="36.0" text="Id" fx:id="id" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="123.0" text="Record Artist" fx:id="artist" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="149.0" text="Record Album" fx:id="album"/>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="165.0" text="Shop" fx:id="shop"/>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="115.0" text="Amount" fx:id="amount"/>
+      </columns>
+      <contextMenu>
+        <ContextMenu>
+          <items>
+            <MenuItem mnemonicParsing="false" text="update" fx:id="update" onAction="#handleUpdate"/>
+            <MenuItem mnemonicParsing="false" text="delete" fx:id="delete" onAction="#handleDelete"/>
+          </items>
+        </ContextMenu>
+      </contextMenu>
+    </TableView>
+    <Button layoutX="51.0" layoutY="367.0" mnemonicParsing="false" text="Add new Record to a storage" fx:id="addButton" onAction="#handleAdd"/>
+  </children>
+</AnchorPane>

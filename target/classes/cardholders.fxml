@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane fx:controller="View.Controllers.CardholderController" id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <TableView fx:id="cardholderModelTableView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <columns>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="190.0" text="Customer" fx:id="customer"/>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="152.0" text="Address" fx:id="address"/>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="170.0" text="Phone Number" fx:id="phone"/>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="76.0" text="Card Type" fx:id="cardType"/>
+      </columns>
+      <contextMenu>
+        <ContextMenu fx:id="menu">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Update" fx:id="updateItem" onAction="#handleUpdate"/>
+            <MenuItem mnemonicParsing="false" text="Delete" fx:id="deleteItem" onAction="#handleDelete"/>
+          </items>
+        </ContextMenu>
+      </contextMenu>
+    </TableView>
+    <Button layoutX="53.0" layoutY="367.0" mnemonicParsing="false" text="Add new Cardholder" fx:id="addButton" onAction="#handleAdd"/>
+  </children>
+</AnchorPane>

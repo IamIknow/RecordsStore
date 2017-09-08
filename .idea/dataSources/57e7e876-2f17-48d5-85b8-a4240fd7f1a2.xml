@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="RecordsStoreDatabase@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="RecordsStoreDatabase">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sys"/>
+    <schema id="7" parent="1" name="sql12167608"/>
+    <table id="8" parent="2" name="CARD"/>
+    <table id="9" parent="2" name="CARDHOLDER"/>
+    <table id="10" parent="2" name="CUSTOMER"/>
+    <table id="11" parent="2" name="EMPLOYEE"/>
+    <table id="12" parent="2" name="LITEM"/>
+    <table id="13" parent="2" name="MANAGER"/>
+    <table id="14" parent="2" name="OITEM"/>
+    <table id="15" parent="2" name="ORD"/>
+    <table id="16" parent="2" name="PITEM"/>
+    <table id="17" parent="2" name="PURCHASE"/>
+    <table id="18" parent="2" name="RECLIST"/>
+    <table id="19" parent="2" name="RECORD"/>
+    <table id="20" parent="2" name="SHOP"/>
+    <column id="21" parent="8" name="Type">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="8" name="Discount">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="23" parent="8" name="PRIMARY">
+      <ColNames>Type</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="9" name="Telephone">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="9" name="Address">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="9" name="Email">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="9" name="MoneySpent">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="28" parent="9" name="Customer_CID">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="9" name="Card_Type">
+      <Position>6</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <index id="30" parent="9" name="fk_CARDHOLDER_Cards1_idx">
+      <ColNames>Card_Type</ColNames>
+    </index>
+    <key id="31" parent="9" name="PRIMARY">
+      <ColNames>Customer_CID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="32" parent="9" name="fk_CARDHOLDER_Customers1">
+      <ColNames>Customer_CID</ColNames>
+      <RefSchemaName>RecordsStoreDatabase</RefSchemaName>
+      <RefTableName>CUSTOMER</RefTableName>
+      <RefColNames>CID</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <foreign-key id="33" parent="9" name="fk_CARDHOLDER_Cards1">
+      <ColNames>Card_Type</ColNames>
+      <RefSchemaName>RecordsStoreDatabase</RefSchemaName>
+      <RefTableName>CARD</RefTableName>
+      <RefColNames>Type</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <column id="34" parent="10" name="CID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="10" name="Name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="36" parent="10" name="Email">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <key id="37" parent="10" name="PRIMARY">
+      <ColNames>CID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="38" parent="11" name="EID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="11" name="Name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="11" name="Surname">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="11" name="BirthDate">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="42" parent="11" name="Salary">
+      <Position>5</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="43" parent="11" name="Shop_SID">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="44" parent="11" name="fk_Employees_Stores1_idx">
+      <ColNames>Shop_SID</ColNames>
+    </index>
+    <key id="45" parent="11" name="PRIMARY">
+      <ColNames>EID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="46" parent="11" name="fk_Employees_Stores1">
+      <ColNames>Shop_SID</ColNames>
+      <RefSchemaName>RecordsStoreDatabase</RefSchemaName>
+      <RefTableName>SHOP</RefTableName>
+      <RefColNames>SID</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <column id="47" parent="12" name="Amount">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="12" name="LITEM_ID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="12" name="RECORD_RID">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="50" parent="12" name="RECLIST_LID">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="51" parent="12" name="fk_LITEM_RECLIST1_idx">
+      <ColNames>RECLIST_LID</ColNames>
+    </index>
+    <index id="52" parent="12" name="fk_LITEM_RECORD1_idx">
+      <ColNames>RECORD_RID</ColNames>
+    </index>
+    <key id="53" parent="12" name="PRIMARY">
+      <ColNames>LITEM_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="54" parent="12" name="fk_LITEM_RECORD1">
+      <ColNames>RECORD_RID</ColNames>
+      <RefSchemaName>RecordsStoreDatabase</RefSchemaName>
+      <RefTableName>RECORD</RefTableName>
+      <RefColNames>RID</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <foreign-key id="55" parent="12" name="fk_LITEM_RECLIST1">
+      <ColNames>RECLIST_LID</ColNames>
+      <RefSchemaName>RecordsStoreDatabase</RefSchemaName>
+      <RefTableName>RECLIST</RefTableName>
+      <RefColNames>LID</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <column id="56" parent="13" name="Employee_EID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="13" name="SHOP_SID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="58" parent="13" name="fk_MANAGER_SHOP1_idx">
+      <ColNames>SHOP_SID</ColNames>
+    </index>
+    <key id="59" parent="13" name="PRIMARY">
+      <ColNames>Employee_EID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="60" parent="13" name="fk_Managers_Employees1">
+      <ColNames>Employee_EID</ColNames>
+      <RefSchemaName>RecordsStoreDatabase</RefSchemaName>
+      <RefTableName>EMPLOYEE</RefTableName>
+      <RefColNames>EID</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <foreign-key id="61" parent="13" name="fk_MANAGER_SHOP1">
+      <ColNames>SHOP_SID</ColNames>
+      <RefSchemaName>RecordsStoreDatabase</RefSchemaName>
+      <RefTableName>SHOP</RefTableName>
+      <RefColNames>SID</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <column id="62" parent="14" name="Amount">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="63" parent="14" name="OITEM_ID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="14" name="ORD_OID">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="14" name="RECORD_RID">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="66" parent="14" name="fk_OITEM_ORD1_idx">
+      <ColNames>ORD_OID</ColNames>
+    </index>
+    <index id="67" parent="14" name="fk_OITEM_RECORD1_idx">
+      <ColNames>RECORD_RID</ColNames>
+    </index>
+    <key id="68" parent="14" name="PRIMARY">
+      <ColNames>OITEM_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="69" parent="14" name="fk_OITEM_ORD1">
+      <ColNames>ORD_OID</ColNames>
+      <RefSchemaName>RecordsStoreDatabase</RefSchemaName>
+      <RefTableName>ORD</RefTableName>
+      <RefColNames>OID</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <foreign-key id="70" parent="14" name="fk_OITEM_RECORD1">
+      <ColNames>RECORD_RID</ColNames>
+      <RefSchemaName>RecordsStoreDatabase</RefSchemaName>
+      <RefTableName>RECORD</RefTableName>
+      <RefColNames>RID</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <column id="71" parent="15" name="OID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="15" name="OrderDate">
+      <Position>2</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="73" parent="15" name="ShipDate">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="74" parent="15" name="Customer_CID">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="75" parent="15" name="fk_Orders_Customers1_idx">
+      <ColNames>Customer_CID</ColNames>
+    </index>
+    <key id="76" parent="15" name="PRIMARY">
+      <ColNames>OID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="77" parent="15" name="fk_Orders_Customers1">
+      <ColNames>Customer_CID</ColNames>
+      <RefSchemaName>RecordsStoreDatabase</RefSchemaName>
+      <RefTableName>CUSTOMER</RefTableName>
+      <RefColNames>CID</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <column id="78" parent="16" name="Amount">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="79" parent="16" name="PITEM_ID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="80" parent="16" name="LITEM_LITEM_ID">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="81" parent="16" name="PURCHASE_PID">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="82" parent="16" name="fk_PITEM_LITEM1_idx">
+      <ColNames>LITEM_LITEM_ID</ColNames>
+    </index>
+    <index id="83" parent="16" name="fk_PITEM_PURCHASE1_idx">
+      <ColNames>PURCHASE_PID</ColNames>
+    </index>
+    <key id="84" parent="16" name="PRIMARY">
+      <ColNames>PITEM_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="85" parent="16" name="fk_PITEM_LITEM1">
+      <ColNames>LITEM_LITEM_ID</ColNames>
+      <RefSchemaName>RecordsStoreDatabase</RefSchemaName>
+      <RefTableName>LITEM</RefTableName>
+      <RefColNames>LITEM_ID</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <foreign-key id="86" parent="16" name="fk_PITEM_PURCHASE1">
+      <ColNames>PURCHASE_PID</ColNames>
+      <RefSchemaName>RecordsStoreDatabase</RefSchemaName>
+      <RefTableName>PURCHASE</RefTableName>
+      <RefColNames>PID</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <column id="87" parent="17" name="PID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="88" parent="17" name="PurDate">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="89" parent="17" name="Price">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="90" parent="17" name="Customer_CID">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="91" parent="17" name="Shop_SID">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="92" parent="17" name="fk_Purchases_Customers1_idx">
+      <ColNames>Customer_CID</ColNames>
+    </index>
+    <index id="93" parent="17" name="PURCHASE_SHOP_fk">
+      <ColNames>Shop_SID</ColNames>
+    </index>
+    <key id="94" parent="17" name="PRIMARY">
+      <ColNames>PID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="95" parent="17" name="fk_Purchases_Customers1">
+      <ColNames>Customer_CID</ColNames>
+      <RefSchemaName>RecordsStoreDatabase</RefSchemaName>
+      <RefTableName>CUSTOMER</RefTableName>
+      <RefColNames>CID</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <foreign-key id="96" parent="17" name="PURCHASE_SHOP_fk">
+      <ColNames>Shop_SID</ColNames>
+      <RefSchemaName>RecordsStoreDatabase</RefSchemaName>
+      <RefTableName>SHOP</RefTableName>
+      <RefColNames>SID</RefColNames>
+    </foreign-key>
+    <column id="97" parent="18" name="LID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="98" parent="18" name="Shop_SID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="99" parent="18" name="fk_StoreLists_Stores1_idx">
+      <ColNames>Shop_SID</ColNames>
+    </index>
+    <key id="100" parent="18" name="PRIMARY">
+      <ColNames>LID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="101" parent="18" name="fk_StoreLists_Stores1">
+      <ColNames>Shop_SID</ColNames>
+      <RefSchemaName>RecordsStoreDatabase</RefSchemaName>
+      <RefTableName>SHOP</RefTableName>
+      <RefColNames>SID</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <column id="102" parent="19" name="RID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="103" parent="19" name="Artist">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="104" parent="19" name="Album">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="105" parent="19" name="Year">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="106" parent="19" name="Genre">
+      <Position>5</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="107" parent="19" name="Price">
+      <Position>6</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <key id="108" parent="19" name="PRIMARY">
+      <ColNames>RID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="109" parent="20" name="SID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="110" parent="20" name="Address">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="111" parent="20" name="Telephone">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <key id="112" parent="20" name="PRIMARY">
+      <ColNames>SID</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

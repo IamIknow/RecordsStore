@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="601.999977929685" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="View.Controllers.RecordController">
+  <children>
+    <TableView fx:id="recordTableView" editable="true" layoutX="6.0" layoutY="5.0" prefHeight="391.0" prefWidth="589.0" tableMenuButtonVisible="true">
+      <columns>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="38.0" text="id" fx:id="id" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Artist" fx:id="artist" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="177.0" text="Album" fx:id="album" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="77.0" text="Year" fx:id="year" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="58.0" text="Genre" fx:id="genre" />
+        <TableColumn prefWidth="75.0" text="Price" fx:id="price" />
+      </columns>
+      <contextMenu>
+        <ContextMenu fx:id="menu">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Update" fx:id="updateItem" onAction="#handleUpdate"/>
+            <MenuItem mnemonicParsing="false" text="Delete" fx:id="deleteItem" onAction="#handleDelete"/>
+          </items>
+        </ContextMenu>
+      </contextMenu>
+    </TableView>
+    <Button fx:id="addButton" layoutX="27.0" layoutY="414.0" mnemonicParsing="false" onAction="#handleAdding" text="Add new record" />
+  </children>
+</AnchorPane>

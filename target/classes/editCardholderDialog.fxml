@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane fx:controller="View.Controllers.EditCardholderController" id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="385.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <GridPane AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <children>
+        <Label text="Customer" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label text="Address" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label text="Phone number" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Label text="Card type" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <ChoiceBox prefWidth="209.0" GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="customer">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <ChoiceBox prefWidth="209.0" GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="card">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <TextField prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="addressField"/>
+        <TextField prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="phone"/>
+        <Button mnemonicParsing="false" text="OK" GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="okButton" onAction="#handleOk"/>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.0" minWidth="10.0" prefWidth="148.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.0" minWidth="10.0" prefWidth="209.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+</AnchorPane>

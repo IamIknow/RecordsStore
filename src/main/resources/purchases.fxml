@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="778.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Controllers.PurchaseController">
+  <children>
+    <TableView fx:id="purchaseModelTableView" layoutX="14.0" layoutY="18.0" prefHeight="344.0" prefWidth="358.0">
+      <columns>
+        <TableColumn fx:id="id" maxWidth="5000.0" minWidth="10.0" prefWidth="38.0" text="Id" />
+        <TableColumn fx:id="customer" maxWidth="5000.0" minWidth="10.0" prefWidth="145.0" text="Customer" />
+        <TableColumn fx:id="date" maxWidth="5000.0" minWidth="10.0" prefWidth="66.0" text="Date" />
+        <TableColumn fx:id="shop" maxWidth="5000.0" minWidth="10.0" prefWidth="108.0" text="Shop" />
+      </columns>
+      <contextMenu>
+        <ContextMenu fx:id="purchasesMenu">
+          <items>
+            <MenuItem fx:id="updatePurchase" mnemonicParsing="false" onAction="#handleUpdatePurchase" text="update" />
+            <MenuItem fx:id="deletePurchase" mnemonicParsing="false" onAction="#handleDeletePurchase" text="delete" />
+          </items>
+        </ContextMenu>
+      </contextMenu>
+    </TableView>
+    <Button fx:id="addItemButton" layoutX="401.0" layoutY="266.0" mnemonicParsing="false" onAction="#handleAddItem" text="Add new Item" />
+    <Button fx:id="addPurchaseButton" layoutX="14.0" layoutY="383.0" mnemonicParsing="false" onAction="#handleAddPurchase" text="Add new Purchase" />
+    <TableView fx:id="itemsTableView" layoutX="401.0" layoutY="18.0" prefHeight="226.0" prefWidth="363.0">
+      <columns>
+        <TableColumn fx:id="itemId" maxWidth="5000.0" minWidth="10.0" prefWidth="40.0" text="id" />
+        <TableColumn fx:id="itemArtist" maxWidth="5000.0" minWidth="10.0" prefWidth="115.0" text="Artist" />
+        <TableColumn fx:id="itemAlbum" maxWidth="5000.0" minWidth="10.0" prefWidth="148.0" text="Album" />
+        <TableColumn fx:id="itemAmount" maxWidth="5000.0" minWidth="10.0" prefWidth="59.0" text="Amount" />
+      </columns>
+      <contextMenu>
+        <ContextMenu>
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleUpdateItem" text="update" />
+            <MenuItem mnemonicParsing="false" onAction="#handleDeleteItem" text="delete" />
+          </items>
+        </ContextMenu>
+      </contextMenu>
+    </TableView>
+      <Button fx:id="createReportButton" layoutX="401.0" layoutY="383.0" mnemonicParsing="false" onAction="#handleReportCreating" text="Create Report" />
+  </children>
+</AnchorPane>
